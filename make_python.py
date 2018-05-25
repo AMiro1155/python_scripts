@@ -9,7 +9,7 @@ __license__ = "GPL"
 __date__ = "Wed 25/04/2018 22:25:26 GMT-08"
 __version__ = "1.0.1"
 __maintainer__ = "Andrey Miroshnikov"
-__email__ = "----"
+__email__ = "-----"
 __status__ = "Development"
 __credits__ = "Andrey Miroshnikov"
 
