@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 """DESCRIPTION: This script creates a template python file with headers."""
-"""USAGE: make_python.py author, progName, status, email"""
+"""USAGE: make_python.py author, progName, status(0-Prototype, 1-Development, 2-Production), email"""
 
 __author__ = "Andrey Miroshnikov"
 __copyright__ = "Copyright (C) 2018 Andrey Miroshnikov"
 __license__ = "GPL"
 __date__ = "Wed 25/04/2018 22:25:26 GMT-08"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __maintainer__ = "Andrey Miroshnikov"
 __email__ = "----"
 __status__ = "Development"
@@ -27,12 +27,13 @@ SECOND = 5
 WEEKDAY = 6
 SKELETON_STRING = ("#------------Imports------------", "", "#------------Defines------------",
 				   "", "#------------Variables------------", "", "#------------Functions------------",
+				   "", "#------------Classes------------",
 				   "", "#------------MAIN------------", "print(\"Hello World!\")")
 #------------Variables------------
-author = "Andrey Miroshnikov"
-progName = "test_script"
-email = "abc@def.com"
-statusType = 1
+#author = "Andrey Miroshnikov"
+#progName = "test_script"
+#email = "abc@def.com"
+#statusType = 1
 #------------Functions------------
 def checkArgs(args):
 	if (len(args) < 1):
@@ -69,7 +70,19 @@ def printStr(printString):
 	
 	
 #------------MAIN------------
-#checkArgs(sys.argv)
+if (len(sys.argv) < 2):
+	print(len(sys.argv))
+	sys.exit("USAGE: make_python.py author, progName, status, email")
+else:
+	print(sys.argv[1])
+	print(sys.argv[2])
+	print(sys.argv[3])
+	print(sys.argv[4])
+	author = sys.argv[1]
+	progName = sys.argv[2]
+	statusType = int(sys.argv[3])
+	email = sys.argv[4]
+	
 localTime = time.localtime(time.time())
 year = localTime[YEAR]
 timeZone = getTimeZone(time.timezone)
